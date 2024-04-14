@@ -5,8 +5,8 @@
 	#address-cells = <0x02>;
 	#size-cells = <0x02>;
 	chassis-type = "embedded";
-	model = "MF32_MB_V02 (4G) jsbsbxjxh66+compile";
-	compatible = "jsbsbxjxh66,MF32_MB_V02\0qcom,msm8916";
+	model = "MF32_MB_V02 (4G) ak201314+compile";
+	compatible = "ak201314,MF32_MB_V02\0qcom,msm8916";
 
 	aliases {
 		mmc0 = "/soc@0/mmc@7824000";
