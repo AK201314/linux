@@ -1,129 +1,68 @@
 // SPDX-License-Identifier: GPL-2.0-only
-/*
- * Chenxuecong (chenxuecong2009@outlook.com)
- */
- 
+
 /dts-v1/;
 
-#include "msm8916-thwc-ufi001c.dts"
-#include <dt-bindings/gpio/gpio.h>
+#include "msm8916-thwc-mf32.dtsi"
 
 / {
 	model = "MF32_MB_V02 4G Modem Stick";
 	compatible = "thwc,mf32", "qcom,msm8916";
-
-	gpio-keys {
-		compatible = "gpio-keys";
-		pinctrl-names = "default";
-		pinctrl-0 = <0xaa>;
-		label = "GPIO Buttons";
-
-		button-restart {
-			label = "Restart";
-			gpios = <73 34 1>;
-			linux,code = <408>;
-		};
-	};
-
-	leds {
-		compatible = "gpio-leds";
-		pinctrl-0 = <0xab>;
-		pinctrl-names = "default";
-
-		led-r {
-			gpios = <73 27 0>;
-			linux,default-trigger = "mmc0";
-			default-state = "off";
-			function = "power";
-		};
-
-		led-g {
-			gpios = <73 29 0>;
-			linux,default-trigger = "heartbeat";
-			default-state = "off";
-			function = "wlan";
-		};
-
-		led-b {
-			gpios = <73 30 0>;
-			linux,default-trigger = "phy0tx";
-			default-state = "off";
-			function = "wan";
-		};
-
-		led-0 {
-			gpios = <73 19 0>;
-			linux,default-trigger = "cpu0";
-			default-state = "off";
-		};
-
-		led-1 {
-			gpios = <73 22 0>;
-			linux,default-trigger = "cpu1";
-			default-state = "off";
-		};
-
-		led-2 {
-			gpios = <73 21 0>;
-			linux,default-trigger = "cpu2";
-			default-state = "off";
-		};
-
-		led-3 {
-			gpios = <73 20 0>;
-			linux,default-trigger = "cpu3";
-			default-state = "off";
-		};
-
-		sim-sel {
-			gpios = <73 49 0>;
-			label = "sim:sel";
-			default-state = "on";
-		};
-
-		sim-en {
-			gpios = <73 24 0>;
-			label = "sim:en";
-			default-state = "off";
-		};
-
-		sim-sel2 {
-			gpios = <73 50 0>;
-			label = "sim:sel2";
-			default-state = "off";
-		};
-
-		sim-en2 {
-			gpios = <73 51 0>;
-			label = "sim:en2";
-			default-state = "off";
-		};
-	};
-
-	battery: battery {
-		compatible = "simple-battery";
-		voltage-min-design-microvolt = <3000000>;
-		voltage-max-design-microvolt = <4200000>;
-		energy-full-design-microwatt-hours = <7980000>;
-		charge-full-design-microamp-hours = <2100000>;
-	};	
 };
 
-&sdhc_2 {
-	pinctrl-0 = <&sdc2_default &sdc2_cd_default>;
-	pinctrl-1 = <&sdc2_sleep &sdc2_cd_default>;
-	pinctrl-names = "default", "sleep";
+&leds {
+	led-wan-green {
+		color = <LED_COLOR_ID_GREEN>;
+		function = LED_FUNCTION_WAN;
+		default-state = "off";
+		gpios = <&tlmm 116 GPIO_ACTIVE_HIGH>;
+	};
 
-	cd-gpios = <&tlmm 38 GPIO_ACTIVE_HIGH>;
+	led-wan-red {
+		color = <LED_COLOR_ID_RED>;
+		function = LED_FUNCTION_WAN;
+		default-state = "on";
+		gpios = <&tlmm 115 GPIO_ACTIVE_HIGH>;
+	};
 
-	status = "okay";
-};
+	led-battery-green {
+		color = <LED_COLOR_ID_GREEN>;
+		function = LED_FUNCTION_POWER;
+		default-state = "on";
+		gpios = <&tlmm 112 GPIO_ACTIVE_HIGH>;
+	};
 
-&tlmm {
-	sdc2_cd_default: sdc2-cd-default-state {
-		pins = "gpio38";
-		function = "gpio";
-		drive-strength = <2>;
-		bias-disable;
+	led-battery-red {
+		color = <LED_COLOR_ID_RED>;
+		function = LED_FUNCTION_POWER;
+		default-state = "off";
+		gpios = <&tlmm 110 GPIO_ACTIVE_HIGH>;
+	};
+
+	led-message-green {
+		color = <LED_COLOR_ID_GREEN>;
+		function = LED_FUNCTION_INDICATOR;
+		default-state = "off";
+		gpios = <&tlmm 22 GPIO_ACTIVE_HIGH>;
+	};
+
+	led-message-red {
+		color = <LED_COLOR_ID_RED>;
+		function = LED_FUNCTION_INDICATOR;
+		default-state = "on";
+		gpios = <&tlmm 121 GPIO_ACTIVE_HIGH>;
+	};
+
+	led-wifi-green {
+		color = <LED_COLOR_ID_GREEN>;
+		function = LED_FUNCTION_WLAN;
+		default-state = "off";
+		gpios = <&tlmm 120 GPIO_ACTIVE_HIGH>;
+	};
+
+	led-wifi-red {
+		color = <LED_COLOR_ID_RED>;
+		function = LED_FUNCTION_WLAN;
+		default-state = "on";
+		gpios = <&tlmm 119 GPIO_ACTIVE_HIGH>;
 	};
 };
