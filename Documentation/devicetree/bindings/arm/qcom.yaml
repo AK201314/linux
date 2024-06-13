@@ -248,6 +248,7 @@ properties:
               - samsung,j5
               - samsung,j5x
               - samsung,serranove
+              - thwc,mf32
               - thwc,uf896
               - thwc,ufi001c
               - wingtech,wt88047
