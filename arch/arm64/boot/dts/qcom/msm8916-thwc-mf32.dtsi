@@ -155,16 +155,15 @@
 	button_default: button-default-state {
 		function = "gpio";
 		drive-strength = <2>;
-		pins = "gpio34", "gpio107";
+		pins = "gpio34";
 		bias-pull-up;
 	};
 
 	gpio_leds_default: gpio-leds-default-state {
 		function = "gpio";
 		drive-strength = <2>;
-		pins = "gpio27", "gpio29", "gpio30", "gpio110", "gpio112",
-		       "gpio113", "gpio114", "gpio115", "gpio116", "gpio117",
-		       "gpio118", "gpio119", "gpio120", "gpio121";
+		pins = "gpio19", "gpio20", "gpio21", "gpio22", "gpio27",
+		       "gpio28", "gpio29", "gpio30";
 		bias-disable;
 	};
 
