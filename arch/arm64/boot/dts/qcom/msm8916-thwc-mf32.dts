@@ -14,55 +14,55 @@
 		color = <LED_COLOR_ID_GREEN>;
 		function = LED_FUNCTION_WAN;
 		default-state = "off";
+		gpios = <&tlmm 30 GPIO_ACTIVE_HIGH>;
+	};
+
+	led-wan-blue {
+		color = <LED_COLOR_ID_BLUE>;
+		function = LED_FUNCTION_WAN;
+		default-state = "on";
 		gpios = <&tlmm 29 GPIO_ACTIVE_HIGH>;
 	};
 
 	led-wan-red {
 		color = <LED_COLOR_ID_RED>;
 		function = LED_FUNCTION_WAN;
-		default-state = "on";
-		gpios = <&tlmm 27 GPIO_ACTIVE_HIGH>;
-	};
-
-	led-battery-green {
-		color = <LED_COLOR_ID_GREEN>;
-		function = LED_FUNCTION_POWER;
-		default-state = "on";
-		gpios = <&tlmm 29 GPIO_ACTIVE_HIGH>;
-	};
-
-	led-battery-red {
-		color = <LED_COLOR_ID_RED>;
-		function = LED_FUNCTION_POWER;
 		default-state = "off";
-		gpios = <&tlmm 27 GPIO_ACTIVE_HIGH>;
+		gpios = <&tlmm 28 GPIO_ACTIVE_HIGH>;
 	};
 
-	led-message-green {
-		color = <LED_COLOR_ID_GREEN>;
-		function = LED_FUNCTION_INDICATOR;
-		default-state = "off";
-		gpios = <&tlmm 29 GPIO_ACTIVE_HIGH>;
-	};
-
-	led-message-red {
-		color = <LED_COLOR_ID_RED>;
-		function = LED_FUNCTION_INDICATOR;
-		default-state = "on";
-		gpios = <&tlmm 27 GPIO_ACTIVE_HIGH>;
-	};
-
-	led-wifi-green {
-		color = <LED_COLOR_ID_GREEN>;
-		function = LED_FUNCTION_WLAN;
-		default-state = "off";
-		gpios = <&tlmm 29 GPIO_ACTIVE_HIGH>;
-	};
-
-	led-wifi-red {
-		color = <LED_COLOR_ID_RED>;
+	led-wlan {
+		color = <LED_COLOR_ID_BLUE>;
 		function = LED_FUNCTION_WLAN;
 		default-state = "on";
 		gpios = <&tlmm 27 GPIO_ACTIVE_HIGH>;
+	};
+
+	led-battery-1 {
+		color = <LED_COLOR_ID_BLUE>;
+		function = LED_FUNCTION_POWER;
+		default-state = "on";
+		gpios = <&tlmm 19 GPIO_ACTIVE_HIGH>;
+	};
+
+	led-battery-2 {
+		color = <LED_COLOR_ID_BLUE>;
+		function = LED_FUNCTION_POWER;
+		default-state = "on";
+		gpios = <&tlmm 22 GPIO_ACTIVE_HIGH>;
+	};
+
+	led-battery-3 {
+		color = <LED_COLOR_ID_BLUE>;
+		function = LED_FUNCTION_POWER;
+		default-state = "on";
+		gpios = <&tlmm 21 GPIO_ACTIVE_HIGH>;
+	};
+
+	led-battery-4 {
+		color = <LED_COLOR_ID_BLUE>;
+		function = LED_FUNCTION_POWER;
+		default-state = "on";
+		gpios = <&tlmm 20 GPIO_ACTIVE_HIGH>;
 	};
 };
