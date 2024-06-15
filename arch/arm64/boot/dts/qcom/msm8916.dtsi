@@ -102,7 +102,7 @@
 		venus_mem: venus {
 			size = <0x0 0x500000>;
 			alignment = <0x0 0x100000>;
-			alloc-ranges = <0x0 0x86800000 0x0 0x8000000>;
+			alloc-ranges = <0x0 0x86800000 0x0 0x100000>;
 			no-map;
 			status = "disabled";
 		};
@@ -118,7 +118,7 @@
 		gps_mem: gps {
 			size = <0x0 0x200000>;
 			alignment = <0x0 0x100000>;
-			alloc-ranges = <0x0 0x86800000 0x0 0x8000000>;
+			alloc-ranges = <0x0 0x86800000 0x0 0x100000>;
 			no-map;
 			status = "disabled";
 		};
