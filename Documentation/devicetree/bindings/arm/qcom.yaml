@@ -205,6 +205,7 @@ properties:
               - samsung,grandmax
               - samsung,j5
               - samsung,serranove
+              - thwc,mf32
               - wingtech,wt88047
           - const: qcom,msm8916
 
