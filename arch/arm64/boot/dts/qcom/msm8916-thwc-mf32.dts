@@ -3187,46 +3187,46 @@
 
 		led-r {
 			gpios = <0x49 0x1b 0x00>;
-			linux,default-trigger = "mmc0";
+			linux,default-trigger = "phy0rx";
 			default-state = "off";
 			function = "power";
 		};
 
 		led-g {
 			gpios = <0x49 0x1d 0x00>;
-			linux,default-trigger = "heartbeat";
+			linux,default-trigger = "none";
 			default-state = "off";
 			function = "wlan";
 		};
 
 		led-b {
 			gpios = <0x49 0x1e 0x00>;
-			linux,default-trigger = "phy0tx";
+			linux,default-trigger = "none";
 			default-state = "off";
 			function = "wan";
 		};
 
 		led-0 {
 			gpios = <0x49 0x13 0x00>;
-			linux,default-trigger = "cpu0";
+			//linux,default-trigger = "cpu0";
 			default-state = "off";
 		};
 
 		led-1 {
 			gpios = <0x49 0x16 0x00>;
-			linux,default-trigger = "cpu1";
+			//linux,default-trigger = "cpu1";
 			default-state = "off";
 		};
 
 		led-2 {
 			gpios = <0x49 0x15 0x00>;
-			linux,default-trigger = "cpu2";
+			//linux,default-trigger = "cpu2";
 			default-state = "off";
 		};
 
 		led-3 {
 			gpios = <0x49 0x14 0x00>;
-			linux,default-trigger = "cpu3";
+			//linux,default-trigger = "cpu3";
 			default-state = "off";
 		};
 
